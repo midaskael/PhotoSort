@@ -4,6 +4,24 @@
 
 An industrial-grade photo/video organization tool for macOS, capable of batch processing 100,000+ files.
 
+## Common Problems This Solves
+
+📱 **Switched phones multiple times** and have photos scattered across various backup folders with no idea which are duplicates?
+
+💻 **Photos on iCloud, Google Photos, and local drives** that you want to merge without losing any or creating duplicates?
+
+📁 **Messy file names** like IMG_0001, IMG_0002... with no clue when they were actually taken?
+
+🎞️ **Live Photos exported as two files** (HEIC + MOV) that are hard to keep together when organizing?
+
+⏰ **Want to organize by date taken** but manually moving files into folders would take forever?
+
+---
+
+**PhotoSort solves all of these!**
+
+With a single command, it automatically organizes scattered photos into dated folders like `2024/01/`, `2024/02/`, removes duplicates, pairs Live Photos, and preserves iOS editing history.
+
 ## Features
 
 - ✅ **Time-based Archiving**: Automatically reads EXIF data and organizes files into `YYYY/MM/` directory structure
