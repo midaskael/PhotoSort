@@ -65,9 +65,25 @@ With a single command, it automatically organizes scattered photos into dated fo
 
 ## Requirements
 
+> [!NOTE]
+> This program has only been tested on **macOS 26**. Other versions may work but are not guaranteed.
+
 - macOS
 - Python 3.9+
-- ExifTool (`brew install exiftool`)
+- ExifTool
+
+### Install Dependencies
+
+```bash
+# Install Homebrew (if not installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Python 3
+brew install python
+
+# Install ExifTool
+brew install exiftool
+```
 
 ## Quick Start
 
@@ -84,10 +100,12 @@ vim config.yaml
 ./start.sh build-index
 
 # 4. Dry-run mode (no actual file moves)
-./start.sh dry-run
+./start.sh dry-run                    # Use source from config.yaml
+./start.sh dry-run -s /path/to/photos # Or specify source with -s
 
 # 5. Run for real
-./start.sh run
+./start.sh run                        # Use source from config.yaml
+./start.sh run -s /path/to/photos     # Or specify source with -s
 ```
 
 ## Usage

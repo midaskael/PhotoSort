@@ -65,9 +65,25 @@
 
 ## 环境要求
 
+> [!NOTE]
+> 本程序仅在 **macOS 26** 上测试通过，其他版本请自行验证。
+
 - macOS
 - Python 3.9+
-- ExifTool (`brew install exiftool`)
+- ExifTool
+
+### 安装依赖
+
+```bash
+# 安装 Homebrew（如未安装）
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 安装 Python 3
+brew install python
+
+# 安装 ExifTool
+brew install exiftool
+```
 
 ## 快速开始
 
@@ -84,10 +100,12 @@ vim config.yaml
 ./start.sh build-index
 
 # 4. 预演模式（不实际移动文件）
-./start.sh dry-run
+./start.sh dry-run                    # 使用 config.yaml 中的 source
+./start.sh dry-run -s /path/to/photos # 或通过 -s 指定源目录
 
 # 5. 正式运行
-./start.sh run
+./start.sh run                        # 使用 config.yaml 中的 source
+./start.sh run -s /path/to/photos     # 或通过 -s 指定源目录
 ```
 
 ## 使用方法
