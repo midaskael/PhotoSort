@@ -1,0 +1,62 @@
+# PhotoX v4 配置文件示例
+
+# 路径配置
+paths:
+  source: "/Users/xx/Pictures/待整理"           # 默认源目录，可通过 --source 参数覆盖
+  dest: "/Users/xx/Pictures/照片整理"           # 归档目标目录（YYYY/MM 结构）
+  data_dir: null                                # 数据目录，null 则使用 <dest>/.photox
+  dup_dir: null                                 # 重复文件目录，null 则使用 <dest>/待删除
+  orphan_aae_dir: null                          # 孤立 AAE 目录，null 则使用 <dest>/AAE_孤立
+  second_check_dir: null                        # 二次确认目录，null 则使用 <dest>/二次确认
+  db_path: null                                 # SQLite 路径，null 则使用 <data_dir>/photo_md5.sqlite3
+
+# 文件类型配置
+extensions:
+  images:
+    - .jpg
+    - .jpeg
+    - .png
+    - .heic
+    - .heif
+    - .tif
+    - .tiff
+    - .gif
+    - .bmp
+    - .webp
+  videos:
+    - .mp4
+    - .mov
+    - .m4v
+    - .avi
+    - .mkv
+    - .3gp
+  raw:
+    - .dng
+    - .cr2
+    - .nef
+    - .arw
+
+# Live Photo 配置
+live_photo:
+  enabled: true                # 是否启用 Live Photo 配对
+  video_ext: .mov              # Live Photo 视频扩展名
+  master_exts:                 # 可能有 Live Photo 的主图扩展名
+    - .heic
+    - .heif
+    - .jpg
+    - .jpeg
+
+# 性能配置
+performance:
+  exiftool_chunk_size: 800     # ExifTool 批量处理大小
+  hash_workers: 4              # 并行 hash 计算线程数
+  hash_threshold_mb: 10        # 大于此值使用 tail10m 方法
+
+# 去重配置
+dedup:
+  verify_tail_collision: true  # 是否对 tail10m 命中进行二次全量确认
+
+# 运行选项（可被 CLI 参数覆盖）
+options:
+  dry_run: false               # 预演模式
+  include_dest: false          # 首次运行将 dest 已有文件入库
